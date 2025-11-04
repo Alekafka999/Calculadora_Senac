@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <h1> Calculadora Simples</h1>
+   <form action="processar.php" method="post">
+        <label for="n1">
+            Número 1:
+            <input type="number" name="n1">
+        </label>
+        <br><br>
+        <label for="n2">
+            Número 2:
+            <input type="number" name="n2">
+        </label>
+        <br><br>
+        Operações: <br>
+        <label for="operacao">
+            <input type="radio" name="operacao" value="somar">
+            Somar
+        </label>
+        <label for="operacao">
+            <input type="radio" name="operacao" value="subtrair">
+            Subtrair
+        </label>
+        <label for="operacao">
+            <input type="radio" name="operacao" value="multiplicar">
+            Multiplicar
+        </label>
+        <label for="operacao">
+            <input type="radio" name="operacao" value="divisao">
+            Divisão
+        </label>
+        <br><br>
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
