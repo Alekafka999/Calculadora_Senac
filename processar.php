@@ -8,15 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $subtracao = $nota1 - $nota2;   
     $multiplicacao = $nota1 * $nota2;
     $divisao = ($nota2 != 0) ? $nota1 / $nota2 : 'Divisão por zero não é permitida';
-    $status = ''; // Variável para armazenar o status do aluno
-
+    $status = ''; 
     
-    // Exibir o resultado de forma legível
-    echo 'soma: ' . number_format($soma, 2, ',', '.') . '<br>';
-    echo 'subtracao: ' . number_format($subtracao, 2, ',', '.') . '<br>';
-    echo 'multiplicacao: ' . number_format($multiplicacao, 2, ',', '.') . '<br>';
-    echo 'divisao: ' . number_format($divisao, 2, ',', '.') . '<br>';
-    echo 'Status: ' . htmlspecialchars($status, ENT_QUOTES, 'UTF-8');
+    // As variáveis já estão calculadas e serão exibidas no HTML abaixo
 
 } else {
     header('Location: formulario.html');
@@ -36,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <p>  Nota 1: <?php echo $nota1; ?> </p>
 <p>  Nota 2: <?php echo $nota2; ?> </p>
-<h2> Resultado: <?php echo number_format($media, 2);($subtracao, 2);($multiplicacao, 2); ($divisao,2) ?> </h2>
+<h2> Resultados:</h2>
+<p>Soma: <?php echo number_format($soma, 2, ',', '.'); ?></p>
+<p>Subtração: <?php echo number_format($subtracao, 2, ',', '.'); ?></p>
+<p>Multiplicação: <?php echo number_format($multiplicacao, 2, ',', '.'); ?></p>
+<p>Divisão: <?php echo is_numeric($divisao) ? number_format($divisao, 2, ',', '.') : $divisao; ?></p>
 
 </body>
 </html>
